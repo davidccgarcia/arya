@@ -7,6 +7,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class UsersTest extends TestCase
 {
+    use DatabaseTransactions;
     /**
      * test the list of users.
      *
