@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<h1 class="page-header">
-    Dashboard
-</h1>
+
+<a href="{{ url('/users/create') }}" class="btn btn-primary">Create User</a><br><br>
+
 @if (count($users) > 0)
     <div class="panel panel-default">
         <div class="panel-heading">

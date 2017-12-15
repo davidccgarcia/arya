@@ -52,8 +52,7 @@ class UsersTest extends TestCase
             ->see('My first user')
             ->seeInDatabase('users', [
                 'name' => 'My first user', 
-                'email' => 'firstuser@mail.com', 
-                'password' => bcrypt('123456')
+                'email' => 'firstuser@mail.com'
             ]);
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\User;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,20 @@ Route::get('/users', function () {
     $users = User::all();
 
     return view('users.index', compact('users'));
+});
+
+Route::post('/users', function (Request $request) {
+    $user = new User;
+    $user->name = $request->name;
+    $user->email = $request->email;
+    $user->password = bcrypt($request->password);
+
+    $user->save();
+
+    return redirect('/users');
+
+});
+
+Route::get('/users/create', function () {
+    return view('users.create');
 });
